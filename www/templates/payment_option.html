@@ -1,0 +1,32 @@
+<ion-view title="Payment Options" ng-init="optionsPayment()">
+	<div class="bar bar-header bar-stable">
+	  	<a class="button icon-left" ng-click="myGoBack()"><i class="ion-android-arrow-back" aria-hidden="true"></i>
+		</a>
+	  	<h1 class="title">Payment Options</h1>
+	  
+	</div>
+  	<ion-content class="recipt_screen" style="background:#f5f5f5;" scroll="true" has-header="false">
+		<div class="payment_cont" style="background:#f5f5f5;">
+			<div class="list" style=" margin:auto; padding:20px 10px;">
+				<div class="card">
+			 		<i class="fa fa-cc-visa"></i>
+			    	<p>**** **** ****<span style="margin-left:10px;">{{lastDi}}</span></p>
+			  	</div>
+		  	</div>
+		  	<div class="cards_cont">
+			  	<ion-list>
+				  <ion-radio checked="true" ng-model="choice" ng-value="'A'" ng-click="rValue('3232')"><i class="fa fa-cc-amex" aria-hidden="true" style="margin-right: 6px;"></i>Amex <span class="chng_colr">Ending in</span> 3232</ion-radio>
+				  <ion-radio ng-model="choice" ng-value="'B'" ng-click="rValue('4254')"><i class="fa fa-cc-visa" aria-hidden="true" style="margin-right: 6px;"></i>Visa <span class="chng_colr">Ending in</span> 4254</ion-radio>
+				  <ion-radio ng-model="choice" ng-value="'C'" ng-click="rValue('3045')"><i class="fa fa-cc-discover" aria-hidden="true" style="margin-right: 6px;"></i>Discover <span class="chng_colr">Ending in</span> 3045</ion-radio>
+				  <ion-radio ng-model="choice" ng-value="'D'" ng-click="rValue('6675')"><i class="fa fa-cc-mastercard" aria-hidden="true" style="margin-right: 6px;"></i>MasterCard <span class="chng_colr">Ending in </span>6675</ion-radio>
+				</ion-list>
+			</div>
+
+			<div class="list text-center card_option">
+				<li class="item" style="color:#8ebf29" ng-click="go_card()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>Add new card </li>
+				<li class="item" style="background:none; border:none;">Or</li>
+				<li class="item" ng-click="go_paypal1()"><i class="fa fa-cc-paypal" aria-hidden="true" style="margin-right: 6px; font-size:22px;"></i>Pay with Paypal</li>
+			</div>		                      
+		</div>		
+  	</ion-content>
+</ion-view>

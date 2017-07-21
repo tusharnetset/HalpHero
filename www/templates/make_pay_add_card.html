@@ -1,0 +1,41 @@
+<ion-view title="Payment Options">
+	<div class="bar bar-header bar-stable">
+  	<a class="button icon-left" ng-click="myGoBack()"><i class="ion-android-arrow-back" aria-hidden="true"></i>
+		</a>
+  	<h1 class="title">Payment Options</h1>
+	</div>
+  <ion-content class="recipt_screen" style="background:#f5f5f5;" scroll="true" has-header="false">
+  	<form name="newCard">
+			<div class="paypal_cont" style="background:#f5f5f5;">
+				<div class="list" style="margin:auto; padding:20px 10px;">
+					<div class="list paypal_form">
+				 		<div class="row">
+					 		<label class="item item-input item-stacked-label col">
+					 			<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+					    	<input type="number" ng-model="user.cNumber" placeholder="Card Number" name="cNumber" limit-char limit="16" style="border:none;">
+					  	</label>
+					  	<span style="color:red" ng-show="submitted && newCard.cNumber.$error.required">Card number is required.</span>
+						</div>	  
+				  	<div class="row">
+					  	<label class="item item-input item-stacked-label col">
+					  		<i class="fa fa-calendar-o" aria-hidden="true"></i>
+					    	<input type="month" placeholder="Expiry Date" ng-model="user.expiryDate" name="expiryDate">
+					  	</label>
+				  		<span style="color:red" ng-show="submitted && newCard.expiryDate.$error.required">Expiry date is required.</span>
+			 		  	<label class="item item-input item-stacked-label col">
+					    	<input type="number" placeholder="CVV Number" ng-model="user.cvv" name="cvv" limit-char limit="3">
+					  	</label>
+					  	<span style="color:red" ng-show="submitted && newCard.cvv.$error.required">cvv is required.</span>
+						</div>
+					</div>		
+				</div>	
+		 		<div class="list job_detail padding text-center">
+		 			<button class="button button-balanced" style="margin-top:10px;" ng-click="addCardMakePay(user,newCard.$valid)">MAKE PAYMENT</button>
+				</div>
+			</div>	
+		</form>	
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+  	<div class="title">Your Paymet is secure with us</div>
+	</div>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view title="Payment Options">
+  <ion-content class="recipt_screen" style="background:#f5f5f5;" scroll="true" has-header="false">
+  <form name="newCard">
+	<div class="paypal_cont" style="background:#f5f5f5;">
+		
+			<div class="list " style="margin:auto; padding:20px 10px;">
+				<div class="list paypal_form">
+				
+					 <label class="item item-input item-stacked-label ">
+					 	<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+					    <input type="email" ng-model="user.email" placeholder="Email Address" name="email" limit-char limit="30" style="border:none;">
+					  </label>
+						<span style="color:red" ng-show="submitted && newCard.email.$error.required">email is required.</span>
+
+					  <label class="item item-input item-stacked-label ">
+					  	<i class="fa fa-calendar-o" aria-hidden="true"></i>
+					    <input type="text" ng-model="user.password" placeholder="Password" name="password" limit-char limit="30">
+					  </label>
+					  <span style="color:red" ng-show="submitted && newCard.password.$error.required">password is required.</span>
+			 		  
+					</div>
+				</div>		
+			</div>	
+
+			 <div class="list job_detail padding text-center">
+			 <button class="button button-balanced" style="margin-top:10px;" ng-click="go_payment(user,userForm.$valid)">SAVE</button>
+
+			</div>
+	</form>
+  </ion-content>
+ 
+</ion-view>

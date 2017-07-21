@@ -1,0 +1,31 @@
+<ion-view title="{{title}}" hide-nav-bar="true" ng-init="getjobs()">
+    <div class="bar bar-header bar-stable">
+        <a class="button icon-left" ng-click="go_profile()"><i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+        <h1 class="title">{{title}}</h1>
+        <a class="button icon-right" ng-click="go_message()"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </a>
+    </div>
+    <ion-content class="home_screen padding" style="background:#f5f5f5;" scroll="true" has-header="false">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()" style="margin-top: 20px;"></ion-refresher>
+        <div class="home_list" style="padding-top:55px;">
+            <ul class="list">
+                <li ng-repeat="data in cusdata | orderBy: 'created_at':true" class="item item-icon-right" ng-if="cusdata.length" ng-click="go_detail_customer(data.id)">
+                    <div class="item-text-wrap">
+                        <h2>{{data.job_name}}</h2>
+                        <div class="button-bar">
+                            <p class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{data.job_date | date:' d MMMM yyyy'}}</p>
+                            <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>{{data.job_time | date:'h:mm a'}}</p>
+                        </div>
+                        <p class="detail_job"> {{data.job_desc}}</p>
+                    </div>
+                    <p class="applicant_quant">{{data.applicant_count}}
+                        <br><span style="color:#2d2e2e;">Applicants</span></p>
+                </li>
+                <div style="text-align: center;" ng-if="!cusdata.length">
+                    <img src="img/not_found.png">
+                </div>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

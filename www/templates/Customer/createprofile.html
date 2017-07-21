@@ -1,0 +1,48 @@
+
+<ion-view title="Create Profile">
+  <ion-content class="createprofile_screen" style="background:#f5f5f5;" scroll="true" has-header="false">
+	<div class="login create_profile" style="background:#f5f5f5;">
+		<div class="padding"  >
+			<div class="list padding" style="background:#fff; border:1px solid #ccc;  margin:auto; ">
+				<div class="user_image text-center" style="margin-top:20px;">
+						<img src="img/user.png">
+
+				</div>	
+			 	<ion-list>
+				  <ion-radio ng-model="choice" ng-value="'A'">Male</ion-radio>
+				  <ion-radio ng-model="choice" ng-value="'B'">Female</ion-radio>
+				</ion-list>
+			  
+			     <label class="item item-input item-select">
+				    <select>
+				      <option>Select Country</option>
+				      <option selected>Select Country</option>
+				      <option>Red</option>
+				    </select>
+				  </label>
+
+			   <label class="item item-input item-stacked-label">
+			    
+			    <input type="text" placeholder="Enter City">
+			     <i class="fa fa-user-o" aria-hidden="true"></i>
+			  </label>
+
+			  <label class="item item-input item-stacked-label">
+			    <input type="text" placeholder="About me">
+			     <i class="fa fa-envelope" aria-hidden="true"></i>
+			  </label>
+			  <label class="item item-input item-stacked-label" style="border-bottom:none;">
+			   <p class="upload_pic">Upload Document</p>
+			     <i class="fa fa-envelope" aria-hidden="true"></i>
+			     <a href="\#" class="upld">Upload</a>
+			  </label>
+			 
+			 
+			  	
+			  </div>
+			 <button class="button button-balanced" style="margin-top:10px;" ng-click="go_home()">CREATE PROFILE</button>
+			</div>
+		</div>	
+	</div>		
+  </ion-content>
+</ion-view>
