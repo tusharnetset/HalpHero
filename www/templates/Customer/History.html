@@ -1,0 +1,53 @@
+<ion-view title="History" hide-nav-bar="true" ng-init="historyIn()">
+  <div class="bar bar-header bar-stable">
+    <a class="button icon-left" ng-click="go_profile()"><i class="fa fa-user" aria-hidden="true"></i>
+    </a>
+    <h1 class="title">History</h1>
+    <a class="button icon-right" ng-click="go_message()"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+    </a>
+  </div>
+  <ion-content class="job_detail_screen  has-header" style="background:#fff;">
+  <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+
+    <p class="job_confirm padding" style="background:#ffb300;"><span style="margin-right:10px; border:none;"><img src="img/progress.png" style="height: 25px;"></span>Working in progress</p>
+    <div ng-repeat="inPro in historydata" ng-if="inPro.job_status == 'Inprogress'" class="home_list history item-text-wrap padding job_cond item item-icon-left item-icon-right" ng-if="historydata.length" ng-click="inProgressC(inPro.id)">
+      <i ng-if="inPro.job_type == 'pc'" class="icon"><img src="img/pet_sitting.png"></i>
+      <i ng-if="inPro.job_type == 'cc'" class="icon"><img src="img/child_care.png"></i>
+      <h2>{{inPro.job_name}}</h2>
+      <p class="detail_job">{{inPro.job_desc}}</p>
+      <i class="icon ion-chevron-right"></i>
+    </div>
+
+    <p class="job_confirm padding" style="background:#fe602e;"><span style="margin-right:10px;"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>Upcoming Task</p>
+    <div ng-if="upcom.job_status == 'Upcoming'" ng-repeat="upcom in historydata" class="home_list history item-text-wrap padding job_cond item item-icon-left item-icon-right" ng-if="historydata.length" ng-click="job_detail_upcoming(upcom.id)">
+      <i ng-if="upcom.job_type == 'pc'" class="icon"><img src="img/pet_sitting.png"></i>
+      <i ng-if="upcom.job_type == 'cc'" class="icon"><img src="img/child_care.png"></i>
+      <h2>{{upcom.job_name}}</h2>
+      <p class="detail_job">{{upcom.job_desc}}</p>
+      <i class="icon ion-chevron-right"></i>
+    </div>
+
+    <p class="job_confirm padding" style="background:#8ebf29;"><span style="margin-right:10px;"><i class="fa fa-check" aria-hidden="true"></i></span>Completed Task</p>
+    <div ng-if="complet.job_status == 'Completed'" ng-repeat="complet in historydata" class="home_list history item-text-wrap padding job_cond item item-icon-left item-icon-right" ng-if="historydata.length" ng-click="job_detail_completedHis(complet.id)">
+      <i ng-if="complet.job_type == 'pc'" class="icon"><img src="img/pet_sitting.png"></i>
+      <i ng-if="complet.job_type == 'cc'" class="icon"><img src="img/child_care.png"></i>
+      <h2>{{complet.job_name}}</h2>
+      <p class="detail_job">{{complet.job_desc}}</p>
+      <i class="icon ion-chevron-right"></i>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

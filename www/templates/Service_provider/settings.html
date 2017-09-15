@@ -1,0 +1,35 @@
+<ion-view view-title="Settings">
+  <ion-content>
+    <ul class="list">
+		<li class="item item-toggle">
+			<h3>Notification</h3>	
+			 <label class="toggle toggle-assertive">
+				<input ng-model="pushNotification.checked" ng-change="pushNotificationChange(pushNotification.checked)" type="checkbox">
+				<div class="track">
+					<div class="handle"></div>
+				</div>
+			</label>
+		</li>
+		 
+		<li class="item item-icon-right" ng-click="aboutUs()">				 
+			<h3>About us</h3>
+			<i class="icon ion-chevron-right"></i>
+		</li>
+		
+		<li class="item item-icon-right" ng-click="contactUs()">
+			<h3>Contact Us</h3>
+			<i class="icon ion-chevron-right"></i>
+		</li>
+		
+		<li class="item item-icon-right" ng-click="privacyPolicy()">
+			<h3>Privacy Policy</h3>
+			<i class="icon ion-chevron-right"></i>
+		</li>
+
+		<li class="item item-icon-right" ng-click="termCondition()">
+			<h3>Terms & Conditions</h3>
+			<i class="icon ion-chevron-right"></i>
+		</li>
+	</ul>
+  </ion-content>
+</ion-view>

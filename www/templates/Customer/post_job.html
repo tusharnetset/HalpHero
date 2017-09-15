@@ -1,0 +1,93 @@
+<ion-view title="Post a Job">
+    <ion-content class="createprofile_screen" style="background:#f5f5f5;" scroll="true" has-header="false">
+        <div class="login post_job create_profile padding" style="background:#f5f5f5;">
+            <form name="userForm" id="userForm">
+                <div class="list padding" style="background:#fff; border:1px solid #ccc;  margin:auto; ">
+                    <div class="row">
+                        <div class="col">
+                            <label class="item item-input item-stacked-label">
+                                <input type="text" placeholder="Job Name" ng-model="user.job_name" name="job_name" limit-char limit="50" required>
+                                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.job_name.$error.required">Job Name is required.</span>
+
+                            
+                            <label class="item item-input item-stacked-label">
+                                <input type="text" ng-model="user.job_desc" placeholder="Job Description" name="job_desc" required>
+                                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.job_desc.$error.required">Job Description is required.</span>
+
+                            <label class="item item-input item-select">
+                                <select name="country" placeholder="Select your Job" ng-model="user.jtyp" name="jtype" required>
+                                    <option value="" selected data-default>Select Type</option>
+                                    <option value="pc">Pet Care</option>
+                                    <option value="cc">Child Care</option>
+                                    <!-- <option value="pt">Pet Trainer</option>
+                                    <option value="g">Grooming</option> -->
+                                </select>
+                               <i class="fa fa-briefcase" aria-hidden="true"></i>
+                               <span style="color:red" ng-show="submitted && userForm.jtype.$error.required">Job type is required.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="item item-input item-stacked-label">
+                                <input type="date" ng-model="user.job_date" class="dateclass" placeholder="Select date" name="job_date" required id="date" ng-change="checkDate()" class="datepicker-input" data-date-format="yyyy-mm-dd">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.job_date.$error.required">Job Date is required.</span>
+                        </div>
+                        <div class="col">
+                            <label class="item item-input item-stacked-label">
+                                <input type="time" class="dateclass" placeholder="Select time" ng-model="user.job_time" id ="time" ng-change="checkTime()" name="job_time" required>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.job_time.$error.required">Job Time is required.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="input-label"><i class="fa fa-money" aria-hidden="true" style="color: hsl(80, 65%, 45%);"></i> &nbsp;Price</span>
+                           
+                            <ion-list>
+                                <ion-radio name="price_type" ng-model="user.price_type" ng-value="'H'" checked="true" required ng-click="showdiv('H')">Hourly</ion-radio>
+                                <ion-radio name="price_type" ng-model="user.price_type" ng-value="'F'" ng-click="showdiv('F')" required>Fixed</ion-radio><br>
+                                <div ng-show="showHideTest" style="border-bottom: 1px solid hsla(80, 65%, 46%, 0.3);">
+                                    <input placeholder="Enter Hourly Price:" type="tel" required ng-model="user.price" name="price" style="padding-left: 16px;"/>
+                                </div>
+                                <div ng-show="showHideTestB" style="border-bottom: 1px solid hsla(80, 65%, 46%, 0.3);">
+                                    <input ng-show="showHideTestB" placeholder=" Enter Fixed Price:" type="tel" name="price" required ng-model="user.price" style="padding-left: 16px;"/>
+                                </div>
+                                <span style="color:red" ng-show="submitted && userForm.price.$error.required">Price is required.</span>
+                            </ion-list>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="item item-input item-stacked-label">
+                                <input type="text" id="searchTextField" placeholder="Enter Location" autocomplete="on" runat="server" required ng-model="user.location" name="location" ng-focus="disableTap()">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.location.$error.required">Location is required.</span>
+                            <label class="item item-input item-stacked-label">
+                                <input type="text" id="city" placeholder="City" required ng-model="user.city" name="city">
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.city.$error.required">City is required.</span>
+                            <label class="item item-input item-stacked-label">
+                                <input type="text" id="country" placeholder="Country" ng-model="user.country" name="country" required>
+                            </label>
+                            <span style="color:red" ng-show="submitted && userForm.country.$error.required">Country is required.</span>
+                        </div>
+                    </div>
+                    <p style="color:hsl(80, 65%, 45%);margin-left: 11px;">You need to make payment of 5€ to post the job.</p>
+                </div>
+                <div class="button_postJ">
+                <button ng-click="create_job(user,userForm.$valid)" class="button button-balanced" style="margin-top:10px;">DONE</button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

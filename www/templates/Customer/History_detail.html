@@ -1,0 +1,35 @@
+<ion-view title="Job Details" hide-nav-bar="true" ng-init="hisJobDetail()">
+    <div class="bar bar-header bar-stable">
+        <a class="button icon-left" ng-click="myGoBack()"><i class="ion-android-arrow-back" aria-hidden="true"></i>
+        </a>
+        <h1 class="title">Job Details</h1>
+    </div>
+    <ion-content class="job_detail_screen has-header" style="background:#f5f5f5;" scroll="true" has-header="false">
+        <div class="job_detail">
+            <div class="list padding">
+                <h1 class="text-center" style="padding:20px 0;">{{jobdata.job_name}}</h1>
+                <p ng-if="jobdata.price_type == 'H'" class="job_type">Hourly</p>
+                <p ng-if="jobdata.price_type == 'F'" class="job_type">Fixed</p>
+                <p class="price">Price:<span style="color:#8ebf29;">${{jobdata.price}}</span></p>
+                <p class="date_cont"><i class="fa fa-calendar" aria-hidden="true"></i> {{jobdata.job_date | date:'d MMMM yyyy'}}</p>
+                <p class="date_cont location"><i class="fa fa-map-marker" aria-hidden="true"></i>{{jobdata.city}}, {{jobdata.country}}<br>
+                {{jobdata.location}}</p>
+            </div>
+            <div class="list job_description padding">
+                <h4>Description</h4>
+                <p>{{jobdata.job_desc}}</p>
+            </div>
+
+            <div class="padding client_cont">
+              <h4 class="title_client">Service Provider</h4>
+               <a class="item item-avatar item-icon-right" ng-click="goMessageHis(servicePdata.id)">
+                 <img ng-if="!servicePdata.pic" src="img/user.png">
+                 <img ng-if="servicePdata.pic" ng-src="{{img_url+servicePdata.pic}}">
+                 <h2>{{servicePdata.first_name}} {{servicePdata.last_name}}</h2>
+                 <div class="icon msg_icn"><i class="fa fa-comment-o" aria-hidden="true" style="margin-right:5px;"></i>Message</div>
+              </a>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
