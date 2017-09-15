@@ -10,7 +10,11 @@
     "auth0-angular": "^4.2.7",
     "ng-cordova-oauth": "^0.3.0",
     "angular-timeago": "^0.4.5",
-    "sweetalert": "^1.1.3"
+    "sweetalert": "^1.1.3",
+    "angular-moment": "^1.0.1",
+    "moment-timezone": "^0.5.13",
+    "moment": "^2.18.1",
+    "jstz": "*"
   },
   "resolutions": {
     "angular": "1.5.3",

@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:703636388:android:5874f8d67c1f3c56",
+        "mobilesdk_app_id": "1:703636388:android:466e385174274c27",
         "android_client_info": {
-          "package_name": "com.ionicframework.customer640089"
+          "package_name": "com.app.halpHero"
         }
       },
       "oauth_client": [
